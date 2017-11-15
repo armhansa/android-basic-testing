@@ -13,6 +13,12 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static MainActivity mainActivity;
+
+    public static MainActivity getMainActivity() {
+        return mainActivity;
+    }
+
     EditText userNameInput;
     EditText emailInput;
     DatePicker dateOfBirthInput;
@@ -28,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setValue() {
+        mainActivity = this;
+
         userNameInput = findViewById(R.id.userNameInput);
         emailInput = findViewById(R.id.emailInput);
         dateOfBirthInput = findViewById(R.id.dateOfBirthInput);
@@ -35,16 +43,27 @@ public class MainActivity extends AppCompatActivity {
         now = new android.text.format.Time();
     }
 
-
-
     public void onSaveClick(View view) {
         //TODO
     }
 
     public void onRevertClick(View view) {
+        resetInput();
+    }
+
+    public void resetInput() {
         now.setToNow();
         userNameInput.setText("");
         emailInput.setText("");
         dateOfBirthInput.updateDate(now.year, now.month, now.monthDay);
     }
+
+    public EditText getUserNameInput() {
+        return userNameInput;
+    }
+
+    public EditText getEmailInput() {
+        return emailInput;
+    }
+
 }
