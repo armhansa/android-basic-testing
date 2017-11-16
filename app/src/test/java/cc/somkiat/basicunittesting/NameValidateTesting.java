@@ -33,6 +33,23 @@ public class NameValidateTesting {
         assertEquals("Is Too Short", result);
     }
 
+    @Test
+    public void nameTooLong() {
+        NameValidation validation = new NameValidation();
+        validation.setName("HelloMyNameIsHansathon");
+        result = validation.alert();
+        assertEquals("Is Too Long", result);
+    }
+
+    @Test
+    public void nameWrongPattern() {
+        NameValidation validation = new NameValidation();
+        validation.setName("lnw999");
+        result = validation.alert();
+        assertEquals("Is Wrong Pattern", result);
+    }
+
+
 
 
     @Test

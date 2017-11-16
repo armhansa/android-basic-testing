@@ -11,6 +11,8 @@ public class NameValidation {
             "Is Null"
             , "Is Empty"
             , "Is Too Short"
+            , "Is Too Long"
+            , "Is Wrong Pattern"
             // You can include new case alert at this
             , "Saved"
     };
@@ -24,6 +26,8 @@ public class NameValidation {
         invalidate.add(new CaseNull());
         invalidate.add(new CaseEmpty());
         invalidate.add(new CaseTooShort());
+        invalidate.add(new CaseTooLong());
+        invalidate.add(new CaseNameWrongPattern());
         // add new Case on this line
 
         int i = -1;
