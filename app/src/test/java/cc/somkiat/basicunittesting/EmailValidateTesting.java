@@ -17,7 +17,13 @@ public class EmailValidateTesting {
         assertEquals("Is Null", result);
     }
 
-
+    @Test
+    public void emailIsEmpty() {
+        EmailValidation validation = new EmailValidation();
+        validation.setEmail("");
+        result = validation.alert();
+        assertEquals("Is Empty", result);
+    }
 
 
 

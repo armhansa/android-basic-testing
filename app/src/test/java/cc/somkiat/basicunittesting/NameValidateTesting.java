@@ -17,7 +17,13 @@ public class NameValidateTesting {
         assertEquals("Is Null", result);
     }
 
-
+    @Test
+    public void nameIsEmpty() {
+        NameValidation validation = new NameValidation();
+        validation.setName("");
+        result = validation.alert();
+        assertEquals("Is Empty", result);
+    }
 
 
 
