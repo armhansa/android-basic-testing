@@ -43,9 +43,18 @@ public class MainActivity extends AppCompatActivity {
     public void onSaveClick(View view) {
         nameValidation.setName(nameInput.getText().toString());
         emailValidation.setEmail(emailInput.getText().toString());
-        if("Saved".equals(nameValidation.alert()) && "Saved".equals(emailValidation.alert())) {
+
+        boolean nameCompete = "Saved".equals(nameValidation.alert());
+        boolean emailCompete = "Saved".equals(emailValidation.alert());
+
+        if(nameCompete && emailCompete) {
             Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-        } else {
+        } else if(nameCompete) {
+            Toast.makeText(this, "Email Invalidate: "+emailValidation.alert(), Toast.LENGTH_SHORT).show();
+        } else if(emailCompete) {
+            Toast.makeText(this, "Name Invalidate: "+nameValidation.alert(), Toast.LENGTH_SHORT).show();
+        }
+        else {
             Toast.makeText(this, "Name Invalidate: "+nameValidation.alert(), Toast.LENGTH_SHORT).show();
             Toast.makeText(this, "Email Invalidate: "+emailValidation.alert(), Toast.LENGTH_LONG).show();
         }
