@@ -89,6 +89,20 @@ public class MainActivityTest {
 
     }
 
+    @Test
+    public void mainActivityTest3() {
+        setValue();
+        SystemClock.sleep(1000);
+        nameText.perform(scrollTo(), replaceText("Hansathon_lnw999"), closeSoftKeyboard());
+        SystemClock.sleep(1000);
+        emailText.perform(scrollTo(), replaceText("armhansa@gmail.com"), closeSoftKeyboard());
+        SystemClock.sleep(1000);
+        emailText.perform(pressImeActionButton());
+        saveBtn.perform(scrollTo(), click());
+        SystemClock.sleep(5000);
+
+    }
+
     private static Matcher<View> childAtPosition(
             final Matcher<View> parentMatcher, final int position) {
 
