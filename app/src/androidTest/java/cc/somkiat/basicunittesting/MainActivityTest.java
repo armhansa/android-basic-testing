@@ -41,7 +41,7 @@ public class MainActivityTest {
     ViewInteraction nameText;
     ViewInteraction emailText;
     ViewInteraction saveBtn;
-    ViewInteraction reset;
+    ViewInteraction revert;
 
     private void setValue() {
         nameText = onView(allOf(withId(R.id.userNameInput),
@@ -59,6 +59,11 @@ public class MainActivityTest {
                                 childAtPosition(
                                         withClassName(is("android.widget.LinearLayout")),
                                         7),0)));
+        revert = onView(allOf(withId(R.id.revertButton), withText("Revert"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.LinearLayout")),
+                                        7),1)));
     }
 
     @Test
@@ -117,7 +122,19 @@ public class MainActivityTest {
 
     }
 
-    
+    @Test
+    public void mainActivityTest5() {
+        setValue();
+        SystemClock.sleep(1000);
+        nameText.perform(scrollTo(), replaceText("Hansathonlnwasdf"), closeSoftKeyboard());
+        SystemClock.sleep(1000);
+        emailText.perform(scrollTo(), replaceText("armhansa@asdfasdf"), closeSoftKeyboard());
+        SystemClock.sleep(1000);
+        emailText.perform(pressImeActionButton());
+        revert.perform(scrollTo(), click());
+        SystemClock.sleep(4000);
+
+    }
 
     private static Matcher<View> childAtPosition(
             final Matcher<View> parentMatcher, final int position) {
