@@ -49,9 +49,6 @@ public class NameValidateTesting {
         assertEquals("Is Wrong Pattern", result);
     }
 
-
-
-
     @Test
     public void nameIsCorrect() {
         NameValidation validate = new NameValidation();
