@@ -25,6 +25,13 @@ public class NameValidateTesting {
         assertEquals("Is Empty", result);
     }
 
+    @Test
+    public void nameTooShort() {
+        NameValidation validation = new NameValidation();
+        validation.setName("H");
+        result = validation.alert();
+        assertEquals("Is Too Short", result);
+    }
 
 
 

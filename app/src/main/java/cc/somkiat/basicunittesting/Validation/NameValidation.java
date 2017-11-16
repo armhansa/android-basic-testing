@@ -10,6 +10,7 @@ public class NameValidation {
     private String alerts[] = {
             "Is Null"
             , "Is Empty"
+            , "Is Too Short"
             // You can include new case alert at this
             , "Saved"
     };
@@ -22,6 +23,7 @@ public class NameValidation {
         List<FillRule> invalidate = new ArrayList<>();
         invalidate.add(new CaseNull());
         invalidate.add(new CaseEmpty());
+        invalidate.add(new CaseTooShort());
         // add new Case on this line
 
         int i = -1;
