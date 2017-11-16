@@ -25,7 +25,13 @@ public class EmailValidateTesting {
         assertEquals("Is Empty", result);
     }
 
-
+    @Test
+    public void emailWrongPattern() {
+        EmailValidation validation = new EmailValidation();
+        validation.setEmail("HelloJaa@a");
+        result = validation.alert();
+        assertEquals("Is Wrong Pattern", result);
+    }
 
     @Test
     public void emailIsCorrect() {

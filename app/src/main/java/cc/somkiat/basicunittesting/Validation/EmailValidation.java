@@ -10,6 +10,7 @@ public class EmailValidation {
     private String alerts[] = {
             "Is Null"
             , "Is Empty"
+            , "Is Wrong Pattern"
             // You can include new case alert at this
             , "Saved"
     };
@@ -22,6 +23,7 @@ public class EmailValidation {
         List<FillRule> invalidate = new ArrayList<>();
         invalidate.add(new CaseNull());
         invalidate.add(new CaseEmpty());
+        invalidate.add(new CaseEmailWrongPattern());
         // add new Case on this line
 
         int i = -1;
