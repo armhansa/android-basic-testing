@@ -11,6 +11,17 @@ public class EmailValidateTesting {
     String result;
 
     @Test
+    public void emailIsNull() {
+        EmailValidation validation = new EmailValidation();
+        result = validation.alert();
+        assertEquals("Is Null", result);
+    }
+
+
+
+
+
+    @Test
     public void emailIsCorrect() {
         EmailValidation validation = new EmailValidation();
         validation.setEmail("armhansa@gmail.com");

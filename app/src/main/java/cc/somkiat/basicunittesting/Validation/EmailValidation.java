@@ -8,8 +8,9 @@ public class EmailValidation {
     String email;
 
     private String alerts[] = {
+            "Is Null"
             // You can include new case alert at this
-            "Saved"
+            , "Saved"
     };
 
     public void setEmail(String email) {
@@ -18,6 +19,7 @@ public class EmailValidation {
 
     public String alert() {
         List<FillRule> invalidate = new ArrayList<>();
+        invalidate.add(new CaseNull());
         // add new Case on this line
 
         int i = -1;

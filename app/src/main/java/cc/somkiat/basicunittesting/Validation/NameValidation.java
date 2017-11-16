@@ -8,8 +8,9 @@ public class NameValidation {
     String name;
 
     private String alerts[] = {
+            "Is Null"
             // You can include new case alert at this
-            "Saved"
+            , "Saved"
     };
 
     public void setName(String name) {
@@ -18,6 +19,7 @@ public class NameValidation {
 
     public String alert() {
         List<FillRule> invalidate = new ArrayList<>();
+        invalidate.add(new CaseNull());
         // add new Case on this line
 
         int i = -1;

@@ -11,6 +11,18 @@ public class NameValidateTesting {
     String result;
 
     @Test
+    public void nameIsNull() {
+        NameValidation validation = new NameValidation();
+        result = validation.alert();
+        assertEquals("Is Null", result);
+    }
+
+
+
+
+
+
+    @Test
     public void nameIsCorrect() {
         NameValidation validate = new NameValidation();
         validate.setName("Henna");
